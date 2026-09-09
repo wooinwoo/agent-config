@@ -1,7 +1,7 @@
 {
   "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "agent-config",
-  "description": "wooinwoo's shared setup for Claude Code and Codex CLI: curated skills plus a small MCP server set.",
+  "description": "wooinwoo's shared setup for Claude Code and Codex CLI: curated skills, a small MCP server set, plus pass-through entries for caveman and ponytail.",
   "owner": {
     "name": "wooinwoo",
     "url": "https://github.com/wooinwoo"
@@ -11,6 +11,26 @@
       "name": "wooinwoo",
       "description": "Curated skills (adversarial-verifier, prompt-optimizer, impeccable, ui-ux-pro-max) and MCP servers (context7, playwright, obsidian, chrome-devtools).",
       "source": "./plugins/wooinwoo",
+      "category": "productivity"
+    },
+    {
+      "name": "caveman",
+      "description": "Terse response mode (JuliusBrussee/caveman). Listed here so one marketplace covers the whole setup.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/JuliusBrussee/caveman.git",
+        "ref": "main"
+      },
+      "category": "productivity"
+    },
+    {
+      "name": "ponytail",
+      "description": "Lazy senior dev mode, smallest correct code (DietrichGebert/ponytail). Pass-through entry.",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/DietrichGebert/ponytail.git",
+        "ref": "main"
+      },
       "category": "productivity"
     }
   ]

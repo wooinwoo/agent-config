@@ -26,13 +26,17 @@ Claude Code와 Codex CLI가 같은 설정을 쓰도록 묶어 둔 설정 레포�
 # Claude Code
 claude plugin marketplace add wooinwoo/agent-config
 claude plugin install wooinwoo@agent-config
+claude plugin install caveman@agent-config
+claude plugin install ponytail@agent-config
 
 # Codex CLI
 codex plugin marketplace add wooinwoo/agent-config
 codex plugin add wooinwoo@agent-config
+codex plugin add caveman@agent-config
+codex plugin add ponytail@agent-config
 ```
 
-Obsidian 볼트 경로처럼 사람마다 다른 값은 설치할 때 넣습니다. 자세한 것은 `plugins/wooinwoo/README.md`에 있습니다.
+`caveman`과 `ponytail`은 원저자 저장소를 그대로 가리키는 통과 항목입니다. 마켓플레이스 하나로 세 개를 다 받을 수 있게 넣어 두었습니다. Obsidian 볼트 경로처럼 사람마다 다른 값은 설치할 때 넣습니다. 자세한 것은 `plugins/wooinwoo/README.md`에 있습니다. Claude Code용 `rust-analyzer-lsp`는 Anthropic 공식 마켓에만 있어 `claude plugin install rust-analyzer-lsp@claude-plugins-official`로 따로 받습니다.
 
 ## 새 기기에서
 

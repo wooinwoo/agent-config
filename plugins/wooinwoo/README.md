@@ -14,6 +14,8 @@ codex plugin marketplace add wooinwoo/agent-config
 codex plugin add wooinwoo@agent-config
 ```
 
+The same marketplace also lists `caveman` and `ponytail` (pass-through entries pointing at their upstream repos), so `claude plugin install caveman@agent-config` / `codex plugin add caveman@agent-config` work too.
+
 ## What you get
 
 Skills: `adversarial-verifier`, `prompt-optimizer`, `impeccable`, `ui-ux-pro-max` (origins and licenses in `THIRD_PARTY.md`).
