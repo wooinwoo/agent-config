@@ -32,3 +32,7 @@ The `obsidian` server exposes one folder and needs to know which one.
 Leave it unset if you do not use Obsidian; the other servers work regardless.
 
 `chrome-devtools` attaches to a Chrome instance started with remote debugging enabled. Without one it stays idle.
+
+## Optional: ripgrep
+
+Codex (Linux builds), Claude Code and opencode ship their own `rg`, so nothing to install for them. The Windows npm build of Codex does not bundle it and falls back to your PATH, so on Windows run `winget install BurntSushi.ripgrep.MSVC` if you want fast search there.

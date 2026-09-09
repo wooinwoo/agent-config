@@ -64,6 +64,19 @@ git clone https://github.com/wooinwoo/agent-config ~/agent-config
 
 `codex mcp add <name> -- <command...>`로 Codex에 추가한 뒤 `mcp/sync-to-claude.py`를 실행하면 Claude에도 같은 서버가 등록됩니다. `~/.claude.json`은 캐시와 인증 정보가 섞여 있어 추적하지 않습니다.
 
+## 권장 도구 (선택)
+
+에이전트가 파일 검색에 쓰는 ripgrep(`rg`)은 대부분 도구에 이미 들어 있습니다. Codex의 리눅스 빌드, Claude Code, opencode는 각자 번들을 씁니다. 따로 깔아야 하는 경우는 두 가지입니다.
+
+- Windows에서 npm으로 설치한 Codex를 쓸 때. 이 빌드는 rg를 안 실어서 시스템 PATH에서 찾습니다.
+- 터미널에서 직접 `rg`를 치고 싶을 때.
+
+```bash
+winget install BurntSushi.ripgrep.MSVC   # Windows
+sudo apt install ripgrep                 # WSL / Debian 계열
+brew install ripgrep                     # macOS
+```
+
 ## 추적하지 않는 것
 
 - `~/.claude/settings.local.json`, `~/.codex/rules/`, `~/.codex/auth.json`, `~/.claude.json`: 권한 누적 기록과 인증 정보
