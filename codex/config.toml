@@ -27,9 +27,8 @@ command = "stitch-mcp"
 enabled = false
 
 [mcp_servers.notebooklm]
-command = "npx"
-args = ["notebooklm-mcp@latest"]
-enabled = false
+command = "notebooklm-mcp"
+args = []
 
 [marketplaces.ponytail]
 source_type = "git"
