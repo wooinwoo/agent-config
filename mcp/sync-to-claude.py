@@ -34,6 +34,9 @@ def main():
     failed = 0
     for name, server in servers.items():
         claude("remove", "-s", "user", name)  # ignore "not found"
+        if server.get("enabled", True) is False:
+            print(f"off  {name}")
+            continue
         result = claude("add-json", "-s", "user", name, json.dumps(to_claude_spec(server)))
         ok = result.returncode == 0
         failed += not ok

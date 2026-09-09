@@ -31,13 +31,14 @@ git clone https://github.com/wooinwoo/agent-config ~/agent-config
 
 - 훅 명령은 셸에서 실행되므로 `$HOME`을 그대로 씁니다.
 - MCP 서버는 `bin/` 래퍼를 이름만으로 호출합니다. 래퍼가 실행 시점에 경로를 찾습니다.
-  - `hermes-tools-mcp`: `HERMES_HOME` (기본 `~/.hermes`)
   - `obsidian-mcp`: `OBSIDIAN_VAULT` (기본 `/mnt/c/Users/$USER/Documents/Obsidian Vault`)
   - `playwright-mcp`: Playwright가 받아 둔 최신 Chromium
   - `stitch-mcp`: `STITCH_API_KEY`. 키는 `personal/env.sh`에 `export`로 두면 래퍼가 실행 시 읽습니다.
 - Codex가 `config.toml`에 써 넣는 `[projects.*]`, `[hooks.state.*]`, `[tui.*]`는 git clean 필터가 커밋에서 걷어냅니다. 작업 복사본에는 남아 있으므로 Codex 동작에는 영향이 없습니다.
 
 ## MCP 서버 추가하기
+
+잠시 안 쓰는 서버는 지우지 말고 `codex/config.toml`의 해당 테이블에 `enabled = false`를 두면 됩니다. 동기화 스크립트가 Claude에서도 내립니다. 다시 켤 때는 값을 지우고 한 번 더 실행합니다.
 
 `codex mcp add <name> -- <command...>`로 Codex에 추가한 뒤 `mcp/sync-to-claude.py`를 실행하면 Claude에도 같은 서버가 등록됩니다. `~/.claude.json`은 캐시와 인증 정보가 섞여 있어 추적하지 않습니다.
 
@@ -49,5 +50,5 @@ git clone https://github.com/wooinwoo/agent-config ~/agent-config
 
 ## 주의
 
-- `hermes codex-runtime migrate`를 다시 실행하면 hermes가 `config.toml`의 `hermes-tools` 블록을 절대경로로 되돌립니다. 실행 후 `command = "hermes-tools-mcp"`, `args = []`로 돌려놓으면 됩니다.
+- `hermes codex-runtime migrate`를 실행하면 hermes가 `config.toml`에 `hermes-tools` MCP 블록을 절대경로로 다시 넣습니다. 쓰지 않으면 `codex mcp remove hermes-tools`로 지우면 됩니다.
 - `codex/hooks.json` 내용이 바뀌면 Codex가 다음 실행 때 훅 신뢰 여부를 한 번 다시 묻습니다.

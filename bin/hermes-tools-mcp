@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# Hermes tools-as-MCP server (web search, browser automation, memory, ...).
-# Resolves the Hermes venv from HERMES_HOME so config files stay free of absolute paths.
-HERMES_HOME="${HERMES_HOME:-$HOME/.hermes}"
-export HERMES_HOME
-export HERMES_QUIET="${HERMES_QUIET:-1}"
-export HERMES_REDACT_SECRETS="${HERMES_REDACT_SECRETS:-true}"
-unset PYTHONPATH PYTHONHOME
-exec "$HERMES_HOME/hermes-agent/venv/bin/python" -m agent.transports.hermes_tools_mcp_server "$@"

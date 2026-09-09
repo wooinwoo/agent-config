@@ -3,22 +3,10 @@ model_reasoning_effort = "xhigh"
 plan_mode_reasoning_effort = "xhigh"
 service_tier = "fast"
 
-# managed by hermes-agent — `hermes codex-runtime migrate` regenerates this section
-
 default_permissions = ":workspace"
-
-[mcp_servers.hermes-tools]
-command = "hermes-tools-mcp"
-args = []
-startup_timeout_sec = 30.0
-tool_timeout_sec = 600.0
-
-[mcp_servers.hermes-tools.tools.web_extract]
-approval_mode = "approve"
 
 [mcp_servers.obsidian]
 command = "obsidian-mcp"
-args = []
 startup_timeout_sec = 20.0
 tool_timeout_sec = 60.0
 default_tools_approval_mode = "prompt"
@@ -31,21 +19,17 @@ args = ["/d", "/c", "npx.cmd", "-y", "chrome-devtools-mcp@1.8.0", "--autoConnect
 command = "npx"
 args = ["-y", "@upstash/context7-mcp"]
 
-[mcp_servers.memory]
-command = "npx"
-args = ["-y", "@modelcontextprotocol/server-memory"]
-
 [mcp_servers.playwright]
 command = "playwright-mcp"
-args = []
 
 [mcp_servers.stitch]
 command = "stitch-mcp"
-args = []
+enabled = false
 
 [mcp_servers.notebooklm]
 command = "npx"
 args = ["notebooklm-mcp@latest"]
+enabled = false
 
 [marketplaces.ponytail]
 source_type = "git"
