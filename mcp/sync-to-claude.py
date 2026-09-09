@@ -43,6 +43,13 @@ def main():
         print(f"{'ok  ' if ok else 'FAIL'} {name}")
         if not ok:
             print((result.stderr or result.stdout).strip(), file=sys.stderr)
+    # Prune user-scope servers Claude still has but config.toml no longer lists.
+    claude_json = Path.home() / ".claude.json"
+    if claude_json.exists():
+        stale = set(json.loads(claude_json.read_text()).get("mcpServers", {})) - set(servers)
+        for name in sorted(stale):
+            claude("remove", "-s", "user", name)
+            print(f"gone {name}")
     sys.exit(1 if failed else 0)
 
 
