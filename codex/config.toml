@@ -1,0 +1,65 @@
+model = "gpt-6-astra"
+model_reasoning_effort = "xhigh"
+plan_mode_reasoning_effort = "xhigh"
+service_tier = "fast"
+
+# managed by hermes-agent — `hermes codex-runtime migrate` regenerates this section
+
+default_permissions = ":workspace"
+
+[mcp_servers.hermes-tools]
+command = "hermes-tools-mcp"
+args = []
+startup_timeout_sec = 30.0
+tool_timeout_sec = 600.0
+
+[mcp_servers.hermes-tools.tools.web_extract]
+approval_mode = "approve"
+
+[mcp_servers.obsidian]
+command = "obsidian-mcp"
+args = []
+startup_timeout_sec = 20.0
+tool_timeout_sec = 60.0
+default_tools_approval_mode = "prompt"
+
+[mcp_servers.chrome-devtools-windows]
+command = "cmd.exe"
+args = ["/d", "/c", "npx.cmd", "-y", "chrome-devtools-mcp@1.8.0", "--autoConnect", "--no-usage-statistics"]
+
+[mcp_servers.context7]
+command = "npx"
+args = ["-y", "@upstash/context7-mcp"]
+
+[mcp_servers.memory]
+command = "npx"
+args = ["-y", "@modelcontextprotocol/server-memory"]
+
+[mcp_servers.playwright]
+command = "playwright-mcp"
+args = []
+
+[mcp_servers.stitch]
+command = "stitch-mcp"
+args = []
+
+[mcp_servers.notebooklm]
+command = "npx"
+args = ["notebooklm-mcp@latest"]
+
+[marketplaces.ponytail]
+source_type = "git"
+source = "https://github.com/DietrichGebert/ponytail.git"
+
+[marketplaces.caveman]
+last_updated = "2026-08-21T00:03:34Z"
+last_revision = "a42ef766cedef6160407418a359a52939b2d20b9"
+source_type = "git"
+source = "https://github.com/JuliusBrussee/caveman.git"
+ref = "main"
+
+[plugins."ponytail@ponytail"]
+enabled = true
+
+[plugins."caveman@caveman"]
+enabled = true

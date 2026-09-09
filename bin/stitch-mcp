@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Stitch MCP proxy. Needs STITCH_API_KEY; loaded from personal/env.sh (git-ignored) if present.
+env_file="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")/.." && pwd)/personal/env.sh"
+[ -f "$env_file" ] && . "$env_file"
+exec npx -y @_davideast/stitch-mcp proxy "$@"

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Adversarial Verifier"
+  short_description: "고위험 작업의 허점을 독립 검토하고 완료 전 증거를 확인합니다"
+  default_prompt: "Use $adversarial-verifier to challenge this implementation before completion."

@@ -1,0 +1,4 @@
+interface:
+  display_name: "Cockpit Board"
+  short_description: "Cockpit 메모와 ID 체크리스트를 AI로 제어"
+  default_prompt: "Use $cockpit-board to review and update my Cockpit checklist."

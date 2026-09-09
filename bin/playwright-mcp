@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Playwright MCP using the newest Chromium Playwright has already downloaded, if any.
+chrome=$(ls -d "$HOME"/.cache/ms-playwright/chromium-*/chrome-linux64/chrome 2>/dev/null | sort -V | tail -1)
+if [ -n "$chrome" ]; then
+  exec npx -y @playwright/mcp --executable-path "$chrome" "$@"
+fi
+exec npx -y @playwright/mcp "$@"

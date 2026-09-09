@@ -1,0 +1,6 @@
+# personal notes are intentionally untracked (see AGENTS.md import)
+personal/
+*.local.*
+.env
+.DS_Store
+__pycache__/

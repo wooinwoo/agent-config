@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Filesystem MCP scoped to the Obsidian vault. Override the location with OBSIDIAN_VAULT.
+vault="${OBSIDIAN_VAULT:-/mnt/c/Users/$USER/Documents/Obsidian Vault}"
+exec npx -y @modelcontextprotocol/server-filesystem "$vault" "$@"
