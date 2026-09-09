@@ -21,7 +21,7 @@ link "$R/personal"  "$HOME/.claude/personal"
 # and lets private skills under personal/skills/ ride along.
 [ -L "$HOME/.claude/skills" ] && rm "$HOME/.claude/skills"
 mkdir -p "$HOME/.claude/skills" "$HOME/.codex/skills"
-for d in "$R"/skills/*/ "$R"/personal/skills/*/; do
+for d in "$R"/skills/*/ "$R"/plugins/wooinwoo/skills/*/ "$R"/personal/skills/*/; do
   [ -f "$d/SKILL.md" ] || continue
   d="${d%/}"
   link "$d" "$HOME/.claude/skills/$(basename "$d")"

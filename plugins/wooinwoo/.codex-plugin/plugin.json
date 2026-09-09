@@ -1,0 +1,23 @@
+{
+  "name": "wooinwoo",
+  "version": "1.0.0",
+  "description": "Curated skills and MCP servers from wooinwoo's Claude Code / Codex setup.",
+  "author": {
+    "name": "wooinwoo",
+    "url": "https://github.com/wooinwoo"
+  },
+  "homepage": "https://github.com/wooinwoo/agent-config",
+  "repository": "https://github.com/wooinwoo/agent-config",
+  "license": "MIT",
+  "keywords": ["skills", "mcp", "design", "review", "prompting"],
+  "skills": "./skills/",
+  "mcpServers": "./mcp/codex.mcp.json",
+  "interface": {
+    "displayName": "wooinwoo",
+    "shortDescription": "Curated skills + MCP set",
+    "developerName": "wooinwoo",
+    "category": "Productivity",
+    "capabilities": ["Skills", "MCP servers"],
+    "websiteURL": "https://github.com/wooinwoo/agent-config"
+  }
+}

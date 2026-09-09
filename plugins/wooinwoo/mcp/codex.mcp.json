@@ -1,0 +1,20 @@
+{
+  "mcpServers": {
+    "context7": {
+      "command": "npx",
+      "args": ["-y", "@upstash/context7-mcp"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["-y", "@playwright/mcp"]
+    },
+    "chrome-devtools": {
+      "command": "npx",
+      "args": ["-y", "chrome-devtools-mcp@latest", "--autoConnect", "--no-usage-statistics"]
+    },
+    "obsidian": {
+      "command": "sh",
+      "args": ["-c", "exec npx -y @modelcontextprotocol/server-filesystem \"$OBSIDIAN_VAULT\""]
+    }
+  }
+}

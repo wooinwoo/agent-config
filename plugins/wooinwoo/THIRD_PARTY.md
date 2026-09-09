@@ -8,4 +8,4 @@ These skills are vendored from their upstream repositories. Each directory keeps
 | ui-ux-pro-max | https://github.com/nextlevelbuilder/ui-ux-pro-max-skill | MIT |
 | prompt-optimizer | https://github.com/github/awesome-copilot | MIT |
 
-`adversarial-verifier` and `cockpit-board` are maintained in this repository.
+`adversarial-verifier` is maintained in this repository.

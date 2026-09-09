@@ -7,7 +7,9 @@ Claude Code와 Codex CLI가 같은 설정을 쓰도록 묶어 둔 설정 레포�
 | 경로 | 용도 | 연결 위치 |
 |---|---|---|
 | `AGENTS.md` | 공용 지침 | `~/.codex/AGENTS.md`, `~/.claude/CLAUDE.md` |
-| `skills/` | 공용 스킬 (SKILL.md 포맷). 출처는 `skills/THIRD_PARTY.md` | `~/.claude/skills/<이름>`, `~/.codex/skills/<이름>` |
+| `plugins/wooinwoo/` | 공유용 플러그인. 스킬 4개 + MCP 서버 4개. 출처는 그 안의 `THIRD_PARTY.md` | 마켓플레이스로 설치. 내 기기에선 스킬만 심링크 |
+| `.claude-plugin/marketplace.json` | 마켓플레이스 매니페스트. Claude·Codex 둘 다 이 파일을 읽음 | 실행용 |
+| `skills/` | 개인 프로젝트 전용 스킬 (cockpit-board) | `~/.claude/skills/<이름>`, `~/.codex/skills/<이름>` |
 | `claude/settings.json` | Claude Code 설정·훅 | `~/.claude/settings.json` |
 | `codex/config.toml` | Codex 설정·MCP 서버. MCP의 단일 원본 | `~/.codex/config.toml` |
 | `codex/hooks.json` | Codex 훅 | `~/.codex/hooks.json` |
@@ -15,6 +17,22 @@ Claude Code와 Codex CLI가 같은 설정을 쓰도록 묶어 둔 설정 레포�
 | `mcp/sync-to-claude.py` | config.toml의 MCP 서버를 Claude에 복제 | 실행용 |
 | `scripts/clean-codex-config.py` | git clean 필터. Codex가 써 넣는 기기 상태를 커밋에서 제외 | git 설정 |
 | `personal/` | 사내 메모와 개인 스킬. git 추적 안 함 | `~/.codex/personal`, `~/.claude/personal` |
+
+## 남과 공유하기
+
+설정 전체가 아니라 스킬과 MCP 서버만 받고 싶은 사람은 플러그인으로 설치하면 됩니다. 자기 설정은 건드리지 않습니다.
+
+```bash
+# Claude Code
+claude plugin marketplace add wooinwoo/agent-config
+claude plugin install wooinwoo@agent-config
+
+# Codex CLI
+codex plugin marketplace add wooinwoo/agent-config
+codex plugin add wooinwoo@agent-config
+```
+
+Obsidian 볼트 경로처럼 사람마다 다른 값은 설치할 때 넣습니다. 자세한 것은 `plugins/wooinwoo/README.md`에 있습니다.
 
 ## 새 기기에서
 

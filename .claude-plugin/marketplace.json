@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "agent-config",
+  "description": "wooinwoo's shared setup for Claude Code and Codex CLI: curated skills plus a small MCP server set.",
+  "owner": {
+    "name": "wooinwoo",
+    "url": "https://github.com/wooinwoo"
+  },
+  "plugins": [
+    {
+      "name": "wooinwoo",
+      "description": "Curated skills (adversarial-verifier, prompt-optimizer, impeccable, ui-ux-pro-max) and MCP servers (context7, playwright, obsidian, chrome-devtools).",
+      "source": "./plugins/wooinwoo",
+      "category": "productivity"
+    }
+  ]
+}
