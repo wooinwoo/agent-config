@@ -77,6 +77,19 @@ sudo apt install ripgrep                 # WSL / Debian 계열
 brew install ripgrep                     # macOS
 ```
 
+### NotebookLM (notebooklm-py)
+
+`codex/config.toml`의 `notebooklm` MCP 서버는 [notebooklm-py](https://github.com/teng-lin/notebooklm-py)의 `notebooklm-mcp` 실행 파일을 PATH에서 찾습니다. 비공식 라이브러리이므로 본인 계정으로 각자 설치해서 씁니다.
+
+```bash
+uv tool install "notebooklm-py[browser,headless,mcp]"
+notebooklm login                 # 브라우저 창에서 한 번 로그인
+notebooklm auth check --test     # "status": "ok" 확인
+notebooklm skill install         # Claude Code·범용 스킬 디렉토리에 스킬 등록
+```
+
+Codex는 `~/.codex/skills/notebooklm`을 `~/.agents/skills/notebooklm`으로 링크해 두면 같은 스킬을 씁니다. 안 쓸 거면 `config.toml`의 해당 테이블에 `enabled = false`를 두면 됩니다.
+
 ## 추적하지 않는 것
 
 - `~/.claude/settings.local.json`, `~/.codex/rules/`, `~/.codex/auth.json`, `~/.claude.json`: 권한 누적 기록과 인증 정보
